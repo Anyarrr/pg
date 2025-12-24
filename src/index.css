@@ -1,0 +1,15 @@
+@import "tailwindcss";
+
+@theme {
+  --color-pgBlue: #0056b3;
+  --color-pgBlue-dark: #003d80;
+  --color-pgBlue-light: #e6f0ff;
+  --color-pgOrange: #ff6600;
+  --color-pgOrange-hover: #e65c00;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+}
