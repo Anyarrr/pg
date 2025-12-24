@@ -1,4 +1,3 @@
-import React from 'react';
 import { FiCoffee, FiArrowRight } from 'react-icons/fi';
 
 const FastConnect = () => {
