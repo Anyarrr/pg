@@ -1,28 +1,26 @@
 // src/components/Header.jsx
 import { useState } from 'react';
-import { FiMenu, FiX } from 'react-icons/fi';
+import { FiMenu, FiX, FiPhone, FiUser } from 'react-icons/fi';
 
 export const PgHeader = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const links = [
     { name: 'Тарифы', href: '#tariffs' },
-    { name: 'Телевидение', href: '#tv' },
-    { name: 'Видеонаблюдение', href: '#cctv' },
     { name: 'Поддержка', href: '#support' },
     { name: 'Контакты', href: '#contacts' },
   ];
 
   return (
     <header className="bg-white shadow-md fixed w-full z-50">
-      <div className="container mx-auto px-4 py-4 flex justify-between items-center">
+      <div className="container mx-auto px-4 py-3 flex justify-between items-center">
         {/* Логотип */}
         <a href="#" className="flex items-center">
             <img src="/logo.svg" alt="ПЖ19 Лого" className="h-8" />
         </a>
 
         {/* Десктоп меню */}
-        <nav className="hidden md:flex space-x-8">
+        <nav className="hidden lg:flex space-x-8">
           {links.map((link) => (
             <a
               key={link.name}
@@ -33,6 +31,21 @@ export const PgHeader = () => {
             </a>
           ))}
         </nav>
+
+        {/* Телефон и кнопка входа */}
+        <div className="hidden md:flex items-center gap-4">
+          <a href="tel:+78634000000" className="flex items-center gap-2 text-pgBlue-dark hover:text-pgOrange transition font-bold">
+            <FiPhone className="text-pgOrange" />
+            <span>8 (8634) 00-00-00</span>
+          </a>
+          <a 
+            href="#" 
+            className="flex items-center gap-2 bg-pgBlue hover:bg-pgBlue-dark text-white font-bold py-2 px-4 rounded-xl transition"
+          >
+            <FiUser />
+            <span>Личный кабинет</span>
+          </a>
+        </div>
 
         {/* Мобильная кнопка меню */}
         <div className="md:hidden">
@@ -55,6 +68,22 @@ export const PgHeader = () => {
               {link.name}
             </a>
           ))}
+          
+          {/* Телефон и кнопка входа для мобильных */}
+          <div className="mt-4 pt-4 border-t border-gray-100 space-y-3">
+            <a href="tel:+78634000000" className="flex items-center gap-2 text-pgBlue-dark font-bold">
+              <FiPhone className="text-pgOrange" />
+              <span>8 (8634) 00-00-00</span>
+            </a>
+            <a 
+              href="#" 
+              className="flex items-center justify-center gap-2 bg-pgBlue hover:bg-pgBlue-dark text-white font-bold py-3 px-4 rounded-xl transition w-full"
+              onClick={() => setIsOpen(false)}
+            >
+              <FiUser />
+              <span>Личный кабинет</span>
+            </a>
+          </div>
         </div>
       )}
     </header>

@@ -41,7 +41,7 @@ const ContactSection = () => {
             </li>
              <li className="flex items-start">
                <FiMapPin className="mr-3 text-pgOrange mt-1" />
-              <span className="text-pgBlue-light">г. Таганрог, ул. Примерная, д. 19</span>
+              <span className="text-pgBlue-light">г. Таганрог, ул. Большая бульварная, 11</span>
             </li>
           </ul>
         </div>
@@ -53,10 +53,10 @@ const ContactSection = () => {
           </h3>
           <p className="text-pgBlue-light mb-4">Подписывайтесь, чтобы быть в курсе новостей и акций.</p>
           <div className="flex space-x-4">
-            <a href="#" className="w-12 h-12 rounded-full bg-blue-500 flex items-center justify-center hover:bg-blue-600 transition transform hover:-translate-y-1">
+            <a href="https://t.me/PG19CONNECTBOT" target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-full bg-blue-500 flex items-center justify-center hover:bg-blue-600 transition transform hover:-translate-y-1">
               <FaTelegramPlane className="text-2xl" />
             </a>
-             <a href="#" className="w-12 h-12 rounded-full bg-blue-700 flex items-center justify-center hover:bg-blue-800 transition transform hover:-translate-y-1">
+             <a href="https://vk.com/pg19_internet" target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-full bg-blue-700 flex items-center justify-center hover:bg-blue-800 transition transform hover:-translate-y-1">
               <FaVk className="text-2xl" />
             </a>
           </div>
