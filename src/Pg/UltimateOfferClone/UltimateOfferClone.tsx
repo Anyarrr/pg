@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { FiCheck, FiPlus, FiTv, FiWifi, FiZap, FiArrowRight, FiShield, FiStar } from 'react-icons/fi';
+import { FiCheck, FiTv, FiWifi, FiZap, FiArrowRight, FiShield, FiStar } from 'react-icons/fi';
 
 const UltimateOffer = () => {
     const [router, setRouter] = useState(false);
