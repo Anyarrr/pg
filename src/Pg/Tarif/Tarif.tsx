@@ -1,19 +1,17 @@
 import { useState, useEffect, useRef } from 'react';
 import { 
   FiCheck, FiZap, FiVideo, FiShield,
-  FiChevronRight, FiCheckCircle, FiPhone, FiLock, FiSmartphone, FiEye
+  FiChevronRight, FiCheckCircle, FiLock, FiSmartphone, FiEye
 } from 'react-icons/fi';
 
 // ... (Ваш блок типов и начальное состояние UltimateOfferResult остается прежним)
 
 const Tarif = () => {
     // ... (Все существующие состояния и эффекты для интернета и модалки остаются без изменений)
-    const [options, setOptions] = useState({ type: 'flat', router: false, box: false });
-    const [price, setPrice] = useState(799);
+    const [options] = useState({ type: 'flat', router: false, box: false });
+    const [price] = useState(799);
     const [isModalOpen, setIsModalOpen] = useState(false);
-    const [isClosing, setIsClosing] = useState(false);
-    const [isOpening, setIsOpening] = useState(false);
-    const [address, setAddress] = useState('');
+    const [address] = useState('');
     const ymapsRef = useRef(null);
 
     // Добавим функцию для открытия модалки под конкретный сервис (опционально для текста)
@@ -22,9 +20,6 @@ const Tarif = () => {
     const handleOpenModal = (serviceName = 'Интернет + ТВ') => {
       setActiveService(serviceName);
       setIsModalOpen(true);
-      setIsClosing(false);
-      setIsOpening(true);
-      setTimeout(() => setIsOpening(false), 10);
     };
 
     // Данные для видеонаблюдения
