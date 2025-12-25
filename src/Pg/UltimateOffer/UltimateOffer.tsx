@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { FiGlobe, FiTv, FiZap, FiHome, FiCheckCircle, FiInfo, FiSmartphone, FiChevronRight } from 'react-icons/fi';
+import { useState } from 'react';
+import { FiGlobe, FiTv, FiZap, FiHome, FiCheckCircle, FiInfo, FiChevronRight } from 'react-icons/fi';
 
 const UltimateOffer = () => {
   const [options, setOptions] = useState({
