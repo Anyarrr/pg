@@ -6,7 +6,7 @@ export const PgHeader = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const links = [
-    { name: 'Тарифы', href: '#tariffs' },
+    { name: 'Услуги', href: '#tariffs' },
     { name: 'Поддержка', href: '#support' },
     { name: 'Контакты', href: '#contacts' },
   ];

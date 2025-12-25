@@ -1,7 +1,7 @@
 import { FiDownload, FiCheckCircle, FiShield, FiSmartphone, FiCreditCard } from 'react-icons/fi';
 import { FaApple, FaGooglePlay } from 'react-icons/fa';
 
-const DownloadApp = () => {
+const   DownloadApp = () => {
   return (
     <section className="py-24 bg-white overflow-hidden font-sans">
       <div className="container mx-auto px-4">
