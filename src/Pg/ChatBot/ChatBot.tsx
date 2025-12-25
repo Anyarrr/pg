@@ -1,22 +1,12 @@
 import { useState, useEffect, useRef } from 'react';
-import { FiMessageCircle, FiX, FiUser, FiGift } from 'react-icons/fi';
+import { FiMessageCircle, FiX, FiUser } from 'react-icons/fi';
 
 const ChatBot = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [showPromo, setShowPromo] = useState(false);
   const [messages, setMessages] = useState([
     { id: 1, text: "Здравствуйте! 👋 Я виртуальный помощник ПЖ19. Чем могу помочь?", isBot: true }
   ]);
   const messagesEndRef = useRef(null);
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      if (!isOpen) {
-        setShowPromo(true);
-      }
-    }, 3000);
-    return () => clearTimeout(timer);
-  }, []);
 
   const scrollToBottom = () => {
     (messagesEndRef.current as HTMLDivElement | null)?.scrollIntoView({ behavior: "smooth" });
@@ -26,33 +16,7 @@ const ChatBot = () => {
     scrollToBottom();
   }, [messages]);
 
-  // --- ИЗМЕНЕННАЯ ЛОГИКА ---
-  const handleOpenChatWithPromo = () => {
-    setShowPromo(false);
-    setIsOpen(true);
-    
-    // Добавляем сообщение от пользователя, как будто он спросил про акцию
-    const userMsgId = Date.now();
-    setMessages(prev => [
-      ...prev, 
-      { id: userMsgId, text: "Расскажите подробнее о тарифе по акции!", isBot: false }
-    ]);
-    
-    // Бот отвечает через небольшую паузу
-    setTimeout(() => {
-      setMessages(prev => [
-        ...prev, 
-        { 
-          id: userMsgId + 1, 
-          text: "Отличный выбор! 🔥 Тариф «Оптимальный + ТВ» — это 300 Мбит/с и 191 канал. При подключении сегодня вы получаете первый месяц в подарок и роутер в аренду всего за 99 ₽/мес! Хотите оформить заявку?", 
-          isBot: true 
-        }
-      ]);
-    }, 800);
-  };
-
   const handleSimpleOpen = () => {
-    setShowPromo(false);
     setIsOpen(!isOpen);
   };
 
@@ -125,40 +89,6 @@ const ChatBot = () => {
         </div>
       )}
 
-      {/* ПРОМО-УВЕДОМЛЕНИЕ */}
-      {showPromo && !isOpen && (
-        <div className="absolute bottom-20 right-0 w-[300px] bg-white rounded-3xl shadow-2xl overflow-hidden border border-gray-100 animate-in fade-in slide-in-from-bottom-5 duration-500">
-          <div className="bg-gradient-to-r from-pgOrange to-orange-500 p-4 text-white relative">
-            <button 
-              onClick={() => setShowPromo(false)}
-              className="absolute top-2 right-2 p-1 hover:bg-white/20 rounded-full transition"
-            >
-              <FiX className="text-lg" />
-            </button>
-            <div className="flex items-center gap-2 mb-1">
-              <FiGift className="text-xl" />
-              <span className="font-bold text-[10px] uppercase tracking-wider">Эксклюзив для вас</span>
-            </div>
-          </div>
-          
-          <div className="p-5">
-            <p className="text-gray-800 font-black text-xl mb-2 italic">
-              300 Мбит/с + ТВ
-            </p>
-            <p className="text-gray-500 text-xs mb-4 leading-relaxed">
-              Первый месяц — <span className="text-green-600 font-bold">0 ₽</span>. 
-              Успейте подключиться до конца недели!
-            </p>
-            <button 
-              onClick={handleOpenChatWithPromo}
-              className="w-full bg-pgBlue hover:bg-pgBlue-dark text-white font-black py-4 rounded-2xl transition-all shadow-lg shadow-pgBlue/20 text-sm uppercase tracking-widest"
-            >
-              Узнать больше
-            </button>
-          </div>
-        </div>
-      )}
-
       {/* КНОПКА ВЫЗОВА ЧАТА */}
       <button
         onClick={handleSimpleOpen}
@@ -167,7 +97,7 @@ const ChatBot = () => {
         }`}
       >
         {isOpen ? <FiX /> : <FiMessageCircle />}
-        {!isOpen && !showPromo && (
+        {!isOpen && (
           <span className="absolute -top-1 -right-1 flex h-5 w-5">
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
             <span className="relative inline-flex rounded-full h-5 w-5 bg-white text-pgOrange text-[10px] font-bold items-center justify-center shadow-sm">1</span>
