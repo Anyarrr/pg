@@ -7,6 +7,9 @@ import FastConnect from "./Pg/FastConnect/FastConnect";
 import DownloadApp from "./Pg/DownloadApp/DownloadApp";
 import Support from "./Pg/Support/Support";
 import ChatBot from "./Pg/ChatBot/ChatBot";
+import UltimateOffer from "./Pg/UltimateOffer/UltimateOffer";
+import UltimateOfferClone from "./Pg/UltimateOfferClone/UltimateOfferClone";
+import UltimateOfferResult from "./Pg/UltimateOfferResult/UltimateOfferResult";
 
 
 function App() {
@@ -15,7 +18,7 @@ function App() {
       <PgHeader />
       <main>
         <PgAddress />
-        <PgTariffsSection />
+        <UltimateOfferResult />
         <FastConnect />
         <PgBenefitsSection />
         <Support />
