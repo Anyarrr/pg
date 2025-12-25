@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { 
-  FiCheck, FiTv, FiZap, FiStar, FiHome, FiX, FiVideo, FiShield,
+  FiCheck, FiZap, FiX, FiVideo, FiShield,
   FiGlobe, FiChevronRight, FiCheckCircle, FiInfo, FiMapPin, FiUser, FiPhone, FiLock, FiSmartphone, FiEye
 } from 'react-icons/fi';
 
