@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { 
-  FiCheck, FiZap, FiX, FiVideo, FiShield,
-  FiGlobe, FiChevronRight, FiCheckCircle, FiInfo, FiMapPin, FiUser, FiPhone, FiLock, FiSmartphone, FiEye
+  FiCheck, FiZap, FiVideo, FiShield,
+  FiChevronRight, FiCheckCircle, FiPhone, FiLock, FiSmartphone, FiEye
 } from 'react-icons/fi';
 
 // ... (Ваш блок типов и начальное состояние UltimateOfferResult остается прежним)
