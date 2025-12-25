@@ -1,4 +1,3 @@
-import React from 'react';
 import { FiDownload, FiCheckCircle, FiShield, FiSmartphone, FiCreditCard } from 'react-icons/fi';
 import { FaApple, FaGooglePlay } from 'react-icons/fa';
 

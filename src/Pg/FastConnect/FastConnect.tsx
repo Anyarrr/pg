@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { FiCoffee, FiArrowRight, FiX, FiSend, FiInfo, FiSmartphone, FiMessageCircle } from 'react-icons/fi';
 
 const FastConnect = () => {
