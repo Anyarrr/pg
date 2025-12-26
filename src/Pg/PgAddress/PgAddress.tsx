@@ -31,9 +31,9 @@ export const PgAddress = () => {
         <div className="max-w-4xl mx-auto">
           
           {/* Заголовок блока */}
-          <div className="text-center mb-8">
-            <h1 className="text-3xl md:text-5xl font-black text-white mb-4 uppercase italic tracking-tight whitespace-nowrap">
-               Интернет <span className="text-pgOrange">ПЖ19</span> который ждали все
+          <div className="text-center mb-8 px-2">
+            <h1 className="text-2xl sm:text-3xl md:text-5xl font-black text-white mb-4 uppercase italic tracking-tight whitespace-normal md:whitespace-nowrap leading-tight">
+              Интернет <span className="text-pgOrange">ПЖ19</span> который ждали все
             </h1>
             <p className="text-blue-100 text-lg">Стабильная сеть и цифровые сервисы в одной заявке</p>
           </div>

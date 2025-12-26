@@ -13,14 +13,14 @@ export const PgHeader = () => {
 
   return (
     <header className="bg-white shadow-md fixed w-full z-50">
-      <div className="container mx-auto px-4 py-3 flex justify-between items-center">
+      <div className="container mx-auto px-4 py-3 flex justify-between items-center relative">
         {/* Логотип */}
         <a href="#" className="flex items-center">
             <img src="/logo.svg" alt="ПЖ19 Лого" className="h-8" />
         </a>
 
-        {/* Десктоп меню */}
-        <nav className="hidden lg:flex space-x-8">
+        {/* Десктоп меню - по центру */}
+        <nav className="hidden lg:flex space-x-8 absolute left-1/2 -translate-x-1/2">
           {links.map((link) => (
             <a
               key={link.name}
