@@ -620,7 +620,7 @@ const UltimateOfferResult = () => {
         </div>
 
         {/* ГЛАВНЫЙ БОКС КОНФИГУРАТОРА */}
-        <div className="max-w-3xl mx-auto bg-white rounded-[3rem] shadow-[0_40px_80px_rgba(0,43,91,0.08)] overflow-hidden border border-gray-100 flex flex-col lg:flex-row">
+        <div className="max-w-4xl mx-auto bg-white rounded-[3rem] shadow-[0_40px_80px_rgba(0,43,91,0.08)] overflow-hidden border border-gray-100 flex flex-col lg:flex-row">
 
           {/* ЛЕВАЯ ПАНЕЛЬ */}
 <div className="lg:w-2/3 p-4 md:p-6 border-r border-gray-50 bg-gradient-to-br from-white to-gray-50/30">
