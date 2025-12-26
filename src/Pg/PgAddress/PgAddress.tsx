@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { FiSearch, FiWifi, FiTv, FiTool, FiZap, FiMapPin, FiX } from 'react-icons/fi';
+import { FiSearch, FiWifi, FiTv, FiZap, FiMapPin, FiX, FiPhone } from 'react-icons/fi';
 
 export const PgAddress = () => {
   const [address, setAddress] = useState<{ city: string; street: string; house: string }>({ city: 'Таганрог', street: '', house: '' });
@@ -32,8 +32,8 @@ export const PgAddress = () => {
           
           {/* Заголовок блока */}
           <div className="text-center mb-8">
-            <h1 className="text-3xl md:text-5xl font-black text-white mb-4 uppercase italic tracking-tight">
-              Подключите интернет <span className="text-pgOrange">ПЖ19</span> в Таганроге
+            <h1 className="text-3xl md:text-5xl font-black text-white mb-4 uppercase italic tracking-tight whitespace-nowrap">
+               Интернет <span className="text-pgOrange">ПЖ19</span> который ждали все
             </h1>
             <p className="text-blue-100 text-lg">Стабильная сеть и цифровые сервисы в одной заявке</p>
           </div>
@@ -52,8 +52,8 @@ export const PgAddress = () => {
                 <span className="text-xs md:text-sm font-bold text-pgBlue-dark">191 ТВ-канал</span>
               </div>
               <div className="flex flex-col items-center text-center group">
-                <FiTool className="text-2xl text-pgOrange mb-2 group-hover:scale-110 transition" />
-                <span className="text-xs md:text-sm font-bold text-pgBlue-dark">0 ₽ за выезд</span>
+                <FiPhone className="text-2xl text-pgOrange mb-2 group-hover:scale-110 transition" />
+                <span className="text-xs md:text-sm font-bold text-pgBlue-dark">Мобильная связь</span>
               </div>
               <div className="flex flex-col items-center text-center group">
                 <FiWifi className="text-2xl text-pgOrange mb-2 group-hover:scale-110 transition" />

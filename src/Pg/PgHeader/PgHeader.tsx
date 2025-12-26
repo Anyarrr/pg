@@ -7,7 +7,7 @@ export const PgHeader = () => {
 
   const links = [
     { name: 'Услуги', href: '#tariffs' },
-    { name: 'Поддержка', href: '#support' },
+    { name: 'О нас', href: '#about' },
     { name: 'Контакты', href: '#contacts' },
   ];
 

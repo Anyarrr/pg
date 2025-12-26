@@ -41,7 +41,7 @@ const ContactSection = () => {
             </li>
              <li className="flex items-start">
                <FiMapPin className="mr-3 text-pgOrange mt-1" />
-              <span className="text-pgBlue-light">г. Таганрог, ул. Большая бульварная, 11</span>
+              <span className="text-pgBlue-light">г. Таганрог, ул. Большая Бульварная, 11</span>
             </li>
           </ul>
         </div>

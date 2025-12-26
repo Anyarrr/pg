@@ -2,6 +2,7 @@ import { PgAddress } from "./Pg/PgAddress/PgAddress";
 import { PgHeader } from "./Pg/PgHeader/PgHeader";
 import PgContactSection from "./Pg/ContactSection/ContactSection";
 import UltimateOfferResult from "./Pg/UltimateOfferResult/UltimateOfferResult";
+import CooperativeSections from "./Pg/CooperativeSections/CooperativeSections";
 
 
 function App() {
@@ -11,6 +12,7 @@ function App() {
       <main>
         <PgAddress />
         <UltimateOfferResult />
+        <CooperativeSections />
       </main>
       <PgContactSection />
     </div>
