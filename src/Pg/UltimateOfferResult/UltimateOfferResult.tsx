@@ -628,7 +628,7 @@ const UltimateOfferResult = () => {
     <div className="flex items-center justify-end mb-3">
       <div className="flex items-center gap-2">
         <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
-        <span className="text-[10px] font-black text-green-600 uppercase tracking-widest">Стабильный сигнал в 2026</span>
+        <span className="text-[10px] font-black text-green-600 uppercase tracking-widest">Стабильный сигнал</span>
       </div>
     </div>
 
