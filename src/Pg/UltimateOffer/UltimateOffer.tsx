@@ -138,8 +138,6 @@ const UltimateOffer = () => {
                 </button>
               </div>
             </div>
-
-            {/* ЦЕНА И КНОПКА */}
             <div className="pt-8 border-t border-gray-200">
               <div className="flex items-end justify-between mb-6">
                 <div>

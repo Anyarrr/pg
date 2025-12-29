@@ -6,7 +6,7 @@ export const PgHeader = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const links = [
-    { name: 'Услуги', href: '#tariffs' },
+    { name: 'Услуги ', href: '#tariffs' },
     { name: 'О нас', href: '#about' },
     { name: 'Контакты', href: '#contacts' },
   ];
@@ -16,7 +16,7 @@ export const PgHeader = () => {
       <div className="container mx-auto px-4 py-3 flex justify-between items-center relative">
         {/* Логотип */}
         <a href="#" className="flex items-center">
-            <img src="/logo.svg" alt="ПЖ19 Лого" className="h-8" />
+            <img src="/logo.svg " alt="ПЖ19 Лого" className="h-8" />
         </a>
 
         {/* Десктоп меню - по центру */}

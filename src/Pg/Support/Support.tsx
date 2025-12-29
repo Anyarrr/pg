@@ -77,14 +77,12 @@ const Support = () => {
               <div className="w-14 h-14 bg-white rounded-2xl flex items-center justify-center text-[#4C75A3] text-2xl mb-6 shadow-sm group-hover:bg-[#4C75A3] group-hover:text-white transition-colors">
                 <FaVk />
               </div>
-              <h3 className="text-xl font-bold text-pgBlue-dark mb-2">Сообщество ВК</h3>
+              <h3 className="text-xl font-bold text-pgBlue-dark mb-2"> Сообщество ВК</h3>
               <span className="text-sm font-black text-[#4C75A3] border-b-2 border-[#4C75A3]/20 group-hover:border-[#4C75A3] transition-all pb-1">
                 ЗАДАТЬ ВОПРОС
               </span>
               <p className="text-sm text-gray-400 mt-4 leading-snug">Следите за новостями и пишите в ЛС</p>
             </a>
-
-            {/* Карточка: Почта */}
             <div className="group bg-gray-50 p-8 rounded-[2.5rem] border-2 border-transparent hover:border-pgBlue/10 hover:bg-white hover:shadow-xl transition-all duration-300">
               <div className="w-14 h-14 bg-white rounded-2xl flex items-center justify-center text-pgOrange text-2xl mb-6 shadow-sm group-hover:bg-pgOrange group-hover:text-white transition-colors">
                 <FiMail />

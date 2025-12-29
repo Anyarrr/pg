@@ -618,8 +618,6 @@ const UltimateOfferResult = () => {
              Мы объединили <span className="text-pgBlue-dark font-bold underline decoration-pgOrange decoration-2">ультимативную скорость</span> и золотой фонд ТВ в одно предложение, от которого невозможно отказаться.
            </p>
         </div>
-
-        {/* ГЛАВНЫЙ БОКС КОНФИГУРАТОРА */}
         <div className="max-w-4xl mx-auto bg-white rounded-[3rem] shadow-[0_40px_80px_rgba(0,43,91,0.08)] overflow-hidden border border-gray-100 flex flex-col lg:flex-row">
 
           {/* ЛЕВАЯ ПАНЕЛЬ */}

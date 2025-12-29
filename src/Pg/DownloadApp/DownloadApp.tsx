@@ -68,7 +68,7 @@ const   DownloadApp = () => {
               {/* Макет смартфона */}
               <div className="relative w-[280px] h-[560px] bg-[#001f42] rounded-[3rem] border-[8px] border-white/10 shadow-2xl overflow-hidden transform lg:rotate-6 hover:rotate-0 transition-transform duration-700">
                 {/* Экран телефона */}
-                <div className="absolute inset-0 bg-gradient-to-br from-pgBlue-dark to-[#001f42] flex flex-col items-center justify-center p-6">
+                <div  className="absolute inset-0 bg-gradient-to-br from-pgBlue-dark to-[#001f42] flex flex-col items-center justify-center p-6">
                   {/* QR-код внутри телефона */}
                   <div className="bg-white p-5 rounded-[2.5rem] shadow-[0_0_30px_rgba(255,102,0,0.3)] mb-8 transform hover:scale-105 transition-transform">
                     <img 
@@ -77,10 +77,10 @@ const   DownloadApp = () => {
                       className="w-32 h-32 md:w-40 md:h-40"
                     />
                   </div>
-                  <div className="text-center text-white">
+                  <div className="text-center  text-white">
                     <div className="w-12 h-1 bg-white/20 mx-auto rounded-full mb-6"></div>
                     <p className="font-black text-lg mb-2 flex items-center justify-center gap-2 uppercase tracking-tighter">
-                      <FiDownload className="text-pgOrange" /> Сканируй
+                      <FiDownload className="text-pgOrange" />  Сканируй
                     </p>
                     <p className="text-blue-200 text-xs leading-relaxed px-4">
                       Наведи камеру для мгновенной <br /> загрузки приложения
