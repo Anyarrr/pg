@@ -1,10 +1,11 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { 
   FiEye, 
   FiShield, 
   FiHome,
-  FiArrowLeft
+  FiArrowLeft,
+  FiPhone
 } from 'react-icons/fi';
 
 const LoginPage = () => {
@@ -14,6 +15,8 @@ const LoginPage = () => {
   const [fullName, setFullName] = useState('');
   const [phone, setPhone] = useState('');
   const [email, setEmail] = useState('');
+  const [showCallWaiting, setShowCallWaiting] = useState(false);
+  const [callSeconds, setCallSeconds] = useState(177);
 
   const formatPhone = (value: string) => {
     const numbers = value.replace(/\D/g, '');
@@ -30,8 +33,41 @@ const LoginPage = () => {
     setPhone(formatted);
   };
 
+  // Таймер обратного отсчета для ожидания звонка
+  useEffect(() => {
+    if (showCallWaiting) {
+      const timer = setInterval(() => {
+        setCallSeconds((prev) => {
+          if (prev <= 1) {
+            clearInterval(timer);
+            return 0;
+          }
+          return prev - 1;
+        });
+      }, 1000);
+
+      // Автоматический переход через 5 секунд на страницу личного кабинета
+      const redirectTimer = setTimeout(() => {
+        navigate('/lk', { state: { userPhone: phone } });
+      }, 5000);
+
+      return () => {
+        clearInterval(timer);
+        clearTimeout(redirectTimer);
+      };
+    }
+  }, [showCallWaiting, navigate]);
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    
+    // При вводе телефона показываем блок ожидания звонка
+    if (loginMethod === 'phone' && phone) {
+      setShowCallWaiting(true);
+      setCallSeconds(177);
+      return;
+    }
+    
     console.log('Вход:', { loginMethod, contractNumber, fullName, phone, email });
   };
 
@@ -160,7 +196,7 @@ const LoginPage = () => {
             )}
 
             {/* Форма входа по телефону */}
-            {loginMethod === 'phone' && (
+            {loginMethod === 'phone' && !showCallWaiting && (
               <div className="space-y-4 animate-fadeIn">
               <div className="relative group">
                 <label className="text-xs font-bold text-gray-500 absolute -top-2 left-3 bg-white px-1 z-10 transition-all group-focus-within:text-pgBlue">
@@ -185,6 +221,53 @@ const LoginPage = () => {
               >
                 Продолжить
               </button>
+              </div>
+            )}
+
+            {/* Блок ожидания звонка */}
+            {loginMethod === 'phone' && showCallWaiting && (
+              <div className="space-y-4 animate-fadeIn">
+                <div className="text-center">
+                  <div className="inline-flex items-center justify-center w-16 h-16 bg-pgBlue rounded-full mb-3">
+                    <FiPhone className="text-white" size={20} />
+                  </div>
+                  <h2 className="text-lg font-black text-gray-800 mb-3">Позвоните на номер</h2>
+                  <a 
+                    href="tel:+78634431431" 
+                    className="text-xl font-black text-pgBlue hover:text-pgOrange transition-colors"
+                  >
+                    +7 (863) 443-14-31
+                  </a>
+                </div>
+
+                <div className="bg-pgBlue-light rounded-xl p-4 space-y-3">
+                  <div>
+                    <p className="text-xs font-bold text-gray-600 mb-1">Звоните с номера</p>
+                    <p className="text-base font-black text-gray-800">{phone || '+7 (900) 111-11-11'}</p>
+                  </div>
+                  <div>
+                    <p className="text-xs font-bold text-gray-600">После соединения сбросьте вызов</p>
+                  </div>
+                </div>
+
+                <div className="text-center">
+                  <div className="inline-block bg-pgBlue-light rounded-xl p-4">
+                    <p className="text-xs font-bold text-gray-500 mb-1">Ожидание звонка...</p>
+                    <p className="text-2xl font-black text-pgBlue">{callSeconds} сек.</p>
+                  </div>
+                </div>
+
+                <button
+                  type="button"
+                  onClick={() => {
+                    setShowCallWaiting(false);
+                    setPhone('');
+                    setCallSeconds(177);
+                  }}
+                  className="w-full text-xs text-pgBlue font-bold hover:underline pt-2"
+                >
+                  Изменить номер телефона
+                </button>
               </div>
             )}
 
