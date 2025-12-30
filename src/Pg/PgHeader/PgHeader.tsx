@@ -1,5 +1,6 @@
 // src/components/Header.jsx
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { FiMenu, FiX, FiPhone, FiUser } from 'react-icons/fi';
 
 export const PgHeader = () => {
@@ -38,13 +39,13 @@ export const PgHeader = () => {
             <FiPhone className="text-pgOrange" />
             <span>8 (8634) 00-00-00</span>
           </a>
-          <a 
-            href="#" 
+          <Link 
+            to="/login"
             className="flex items-center gap-2 bg-pgBlue hover:bg-pgBlue-dark text-white font-bold py-2 px-4 rounded-xl transition"
           >
             <FiUser />
             <span>Личный кабинет</span>
-          </a>
+          </Link>
         </div>
 
         {/* Мобильная кнопка меню */}
@@ -75,14 +76,14 @@ export const PgHeader = () => {
               <FiPhone className="text-pgOrange" />
               <span>8 (8634) 00-00-00</span>
             </a>
-            <a 
-              href="#" 
+            <Link 
+              to="/login"
               className="flex items-center justify-center gap-2 bg-pgBlue hover:bg-pgBlue-dark text-white font-bold py-3 px-4 rounded-xl transition w-full"
               onClick={() => setIsOpen(false)}
             >
               <FiUser />
               <span>Личный кабинет</span>
-            </a>
+            </Link>
           </div>
         </div>
       )}

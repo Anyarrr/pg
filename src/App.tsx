@@ -1,21 +1,22 @@
-import { PgAddress } from "./Pg/PgAddress/PgAddress";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { PgHeader } from "./Pg/PgHeader/PgHeader";
-import PgContactSection from "./Pg/ContactSection/ContactSection";
-import UltimateOfferResult from "./Pg/UltimateOfferResult/UltimateOfferResult";
-import CooperativeSections from "./Pg/CooperativeSections/CooperativeSections";
+import HomePage from "./Pg/HomePage/HomePage";
+import LoginPage from "./Pg/LoginPage/LoginPage";
 
 
 function App() {
   return (
-    <div className="flex flex-col min-h-screen">
-      <PgHeader />
-      <main>
-        <PgAddress />
-        <UltimateOfferResult />
-        <CooperativeSections />
-      </main>
-      <PgContactSection />
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={
+          <div className="flex flex-col min-h-screen">
+            <PgHeader />
+            <HomePage />
+          </div>
+        } />
+        <Route path="/login" element={<LoginPage />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
