@@ -2,7 +2,6 @@ import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { 
   FiEye, 
-  FiEyeOff,
   FiShield, 
   FiHome,
   FiArrowLeft
@@ -10,10 +9,7 @@ import {
 
 const LoginPage = () => {
   const navigate = useNavigate();
-  const [authMethod, setAuthMethod] = useState<'login' | 'reg'>('login');
   const [loginMethod, setLoginMethod] = useState<'telegram' | 'contract' | 'phone' | 'email'>('telegram');
-  const [showPassword, setShowPassword] = useState(false);
-  const [password, setPassword] = useState('');
   const [contractNumber, setContractNumber] = useState('');
   const [fullName, setFullName] = useState('');
   const [phone, setPhone] = useState('');
@@ -36,7 +32,7 @@ const LoginPage = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Вход:', { loginMethod, password, contractNumber, fullName, phone, email });
+    console.log('Вход:', { loginMethod, contractNumber, fullName, phone, email });
   };
 
   return (
