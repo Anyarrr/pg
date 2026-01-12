@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { 
   FiPhone, FiSend, FiMessageCircle, FiPlus, 
-  FiChevronRight, FiSearch, FiHelpCircle, FiFileText, FiX,
+  FiChevronRight, FiSearch, FiFileText, FiX,
   FiChevronDown, FiCreditCard, FiWifi, FiLayers, FiUser
 } from 'react-icons/fi';
 
@@ -365,9 +365,6 @@ export const SupportPage: React.FC<SupportPageProps> = ({ onOpenChat }) => {
   );
 };
 
-const FiArrowRight = ({ className }: { className?: string }) => (
-  <svg className={className} width="16" height="16" fill="none" stroke="currentColor" strokeWidth="3" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
-);
 
 
 // import React, { useState } from 'react';

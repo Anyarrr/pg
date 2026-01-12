@@ -1,7 +1,7 @@
 import React from 'react';
 import { 
-  FiWifi, FiTv, FiShield, FiSmartphone, FiHome, 
-  FiZap, FiClock, FiCheck, FiVideo, FiInfo 
+  FiWifi, FiSmartphone, FiHome, 
+  FiZap, FiClock, FiCheck, FiInfo 
 } from 'react-icons/fi';
 
 // Универсальный компонент карточки в стиле скриншота
