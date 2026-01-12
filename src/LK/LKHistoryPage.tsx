@@ -10,6 +10,7 @@ export const LKHistoryPage = () => {
   return (
     <div className="min-h-screen bg-[#F2F3F7]">
       <LKHeader userPhone={userPhone} userName={userName} />
+      
       <TransactionHistory />
     </div>
   );
