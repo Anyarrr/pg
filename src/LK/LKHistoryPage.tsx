@@ -5,6 +5,7 @@ import { TransactionHistory } from './TransactionHistory/TransactionHistory';
 export const LKHistoryPage = () => {
   const location = useLocation();
   const userPhone = (location.state as { userPhone?: string })?.userPhone || '+7 (900) 111-11-11';
+  
   const userName = (location.state as { userName?: string })?.userName || 'Печкин Игорь Иванович';
   
   return (
