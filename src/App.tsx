@@ -5,6 +5,9 @@ import LoginPage from "./Pg/LoginPage/LoginPage";
 import CallWaitingPage from "./Pg/CallWaitingPage/CallWaitingPage";
 import { LKKabinet } from "./LK/LKKabinet";
 import { LKPaymentPage } from "./LK/LKPaymentPage";
+import { LKHistoryPage } from "./LK/LKHistoryPage";
+import { LKSupportPage } from "./LK/LKSupportPage";
+import { LKProfilePage } from "./LK/LKProfilePage";
 import { LKTariffsPage } from "./LK/LKTariffsPage";
 
 
@@ -22,6 +25,9 @@ function App() {
         <Route path="/call-waiting" element={<CallWaitingPage />} />
         <Route path="/lk" element={<LKKabinet />} />
         <Route path="/lk/payment" element={<LKPaymentPage />} />
+        <Route path="/lk/history" element={<LKHistoryPage />} />
+        <Route path="/lk/support" element={<LKSupportPage />} />
+        <Route path="/lk/profile" element={<LKProfilePage />} />
         <Route path="/lk/tariffs" element={<LKTariffsPage />} />
       </Routes>
     </BrowserRouter>

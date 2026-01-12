@@ -7,11 +7,26 @@ import {
 
 const LKPayment = () => {
   const [amount, setAmount] = useState('700');
-  const [method, setMethod] = useState('sbp');
+  const [method, setMethod] = useState('card');
   const [isAutoPay, setIsAutoPay] = useState(false);
   const [saveCard, setSaveCard] = useState(true);
+  const [cardNumber, setCardNumber] = useState('');
 
   const quickAmounts = ['500', '700', '1000', '2000'];
+
+  const formatCardNumber = (value: string) => {
+    // Удаляем все нецифровые символы
+    const numbers = value.replace(/\D/g, '');
+    // Ограничиваем до 16 цифр
+    const limitedNumbers = numbers.slice(0, 16);
+    // Добавляем пробелы каждые 4 цифры
+    return limitedNumbers.replace(/(.{4})/g, '$1 ').trim();
+  };
+
+  const handleCardNumberChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const formatted = formatCardNumber(e.target.value);
+    setCardNumber(formatted);
+  };
 
   return (
     <div className="max-w-2xl mx-auto mt-8 space-y-4">
@@ -60,19 +75,6 @@ const LKPayment = () => {
           <h3 className="text-[10px] font-black text-gray-400 uppercase tracking-[0.2em] mb-4 ml-2">Выберите способ</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mb-6">
             <div 
-              onClick={() => setMethod('sbp')}
-              className={`p-5 rounded-2xl border-2 cursor-pointer transition-all flex items-center justify-between ${
-                method === 'sbp' ? 'border-pgOrange bg-orange-50/20' : 'border-gray-50 bg-gray-50/50 hover:border-gray-200'
-              }`}
-            >
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 bg-black rounded-xl flex items-center justify-center text-white text-[10px] font-black italic">СБП</div>
-                <div className="text-sm font-black italic tracking-tight">Система <br/> платежей</div>
-              </div>
-              {method === 'sbp' && <FiCheck className="text-pgOrange" strokeWidth={3} />}
-            </div>
-
-            <div 
               onClick={() => setMethod('card')}
               className={`p-5 rounded-2xl border-2 cursor-pointer transition-all flex items-center justify-between ${
                 method === 'card' ? 'border-pgBlue bg-blue-50/20' : 'border-gray-50 bg-gray-50/50 hover:border-gray-200'
@@ -91,6 +93,19 @@ const LKPayment = () => {
               </div>
               {method === 'card' && <FiCheck className="text-pgBlue" strokeWidth={3} />}
             </div>
+
+            <div 
+              onClick={() => setMethod('sbp')}
+              className={`p-5 rounded-2xl border-2 cursor-pointer transition-all flex items-center justify-between ${
+                method === 'sbp' ? 'border-pgOrange bg-orange-50/20' : 'border-gray-50 bg-gray-50/50 hover:border-gray-200'
+              }`}
+            >
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 bg-black rounded-xl flex items-center justify-center text-white text-[10px] font-black italic">СБП</div>
+                <div className="text-sm font-black italic tracking-tight">Система <br/> платежей</div>
+              </div>
+              {method === 'sbp' && <FiCheck className="text-pgOrange" strokeWidth={3} />}
+            </div>
           </div>
 
           {/* РЕКВИЗИТЫ КАРТЫ (Выпадают при выборе method === 'card') */}
@@ -100,7 +115,10 @@ const LKPayment = () => {
                 <label className="text-[9px] font-black text-gray-400 uppercase tracking-widest ml-1 mb-2 block">Номер карты</label>
                 <input 
                   type="text" 
+                  value={cardNumber}
+                  onChange={handleCardNumberChange}
                   placeholder="0000 0000 0000 0000"
+                  maxLength={19}
                   className="w-full bg-white border border-gray-100 rounded-xl py-4 px-5 text-lg font-bold tracking-widest outline-none focus:border-pgBlue/30 transition-all"
                 />
               </div>

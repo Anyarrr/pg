@@ -1,8 +1,20 @@
 import { useState, useEffect, useRef } from 'react';
 import { FiMessageCircle, FiX, FiUser } from 'react-icons/fi';
 
-const ChatBot = () => {
+interface ChatBotProps {
+  isOpenExternal?: boolean;
+  onToggleExternal?: (open: boolean) => void;
+}
+
+const ChatBot: React.FC<ChatBotProps> = ({ isOpenExternal, onToggleExternal }) => {
   const [isOpen, setIsOpen] = useState(false);
+  
+  // Синхронизация с внешним управлением
+  useEffect(() => {
+    if (isOpenExternal !== undefined) {
+      setIsOpen(isOpenExternal);
+    }
+  }, [isOpenExternal]);
   const [messages, setMessages] = useState([
     { id: 1, text: "Здравствуйте! 👋 Я виртуальный помощник ПЖ19. Чем могу помочь?", isBot: true }
   ]);
@@ -17,7 +29,11 @@ const ChatBot = () => {
   }, [messages]);
 
   const handleSimpleOpen = () => {
-    setIsOpen(!isOpen);
+    const newState = !isOpen;
+    setIsOpen(newState);
+    if (onToggleExternal) {
+      onToggleExternal(newState);
+    }
   };
 
   const questions = [
@@ -52,7 +68,15 @@ const ChatBot = () => {
                 <div className="text-xs text-blue-200">Онлайн</div>
               </div>
             </div>
-            <button onClick={() => setIsOpen(false)} className="hover:bg-white/10 p-2 rounded-full transition">
+            <button 
+              onClick={() => {
+                setIsOpen(false);
+                if (onToggleExternal) {
+                  onToggleExternal(false);
+                }
+              }} 
+              className="hover:bg-white/10 p-2 rounded-full transition"
+            >
               <FiX className="text-2xl" />
             </button>
           </div>
@@ -97,12 +121,6 @@ const ChatBot = () => {
         }`}
       >
         {isOpen ? <FiX /> : <FiMessageCircle />}
-        {!isOpen && (
-          <span className="absolute -top-1 -right-1 flex h-5 w-5">
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
-            <span className="relative inline-flex rounded-full h-5 w-5 bg-white text-pgOrange text-[10px] font-bold items-center justify-center shadow-sm">1</span>
-          </span>
-        )}
       </button>
 
     </div>

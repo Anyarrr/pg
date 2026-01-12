@@ -40,7 +40,7 @@ export const PgTariffsSection = () => {
             <p className="text-gray-500 mt-1 font-medium">1000 Мбит/с безлимит • Подключён с 15.06.2023</p>
           </div>
           <div className="mt-4 md:mt-0 text-right">
-            <div className="text-3xl font-bold">1 200,00 ₽</div>
+            <div className="text-3xl font-bold">700,00 ₽</div>
             <p className="text-gray-400 text-sm font-medium">в месяц</p>
           </div>
         </div>

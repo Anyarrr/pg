@@ -10,7 +10,7 @@ interface LKHeaderProps {
 
 export const LKHeader = ({ 
   userPhone = '+7 (900) 111-11-11',
-//   userName = 'Печкин Игорь Иванович.' 
+  userName = 'Печкин Игорь.' 
 }: LKHeaderProps) => {
   const navigate = useNavigate();
   const [isOpen, setIsOpen] = useState(false);
@@ -24,11 +24,12 @@ export const LKHeader = ({
   }, []);
 
   const links = [
+    { name: 'Главная', href: '/lk', isLink: true },
     { name: 'Оплата', href: '/lk/payment', isLink: true },
+    // { name: 'История', href: '/lk/history', isLink: true },
     { name: 'Тарифы', href: '/lk/tariffs', isLink: true },
-    { name: 'Финансы', href: '#finance', isLink: false },
-    { name: 'Услуги', href: '#services', isLink: false },
-    { name: 'Поддержка', href: '#support', isLink: false },
+    { name: 'Поддержка', href: '/lk/support', isLink: true },
+    { name: 'Профиль', href: '/lk/profile', isLink: true },
   ];
 
   
@@ -83,7 +84,7 @@ export const LKHeader = ({
             </button>
             
             <div className="flex items-center gap-3 bg-gray-50 p-1.5 pr-4 rounded-2xl border border-gray-100">
-              <span className="text-sm font-bold text-pgBlue-dark truncate max-w-[150px]">{userPhone}</span>
+              <span className="text-sm font-bold text-pgBlue-dark truncate max-w-[150px]">{userName}</span>
 
               <div className="w-8 h-8 bg-white rounded-xl shadow-sm flex items-center justify-center text-pgBlue-dark">
                 <FiUser size={18} />
